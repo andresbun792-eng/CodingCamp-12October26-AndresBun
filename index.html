@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ───────────────────────── HEADER / GREETING ───────────────────────── -->
+  <header class="greeting-card">
+    <div id="clock" class="clock"></div>
+    <div id="date" class="date"></div>
+    <div id="greeting" class="greeting"></div>
+
+    <!-- Challenge: Custom name -->
+    <div class="name-row">
+      <span id="name-display" class="name-display"></span>
+      <button id="edit-name-btn" class="btn-icon" title="Edit name">✏️</button>
+    </div>
+
+    <!-- Dark / Light mode toggle (Challenge) -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">🌙</button>
+  </header>
+
+  <!-- ───────────────────────── MAIN GRID ───────────────────────── -->
+  <main class="grid">
+
+    <!-- FOCUS TIMER -->
+    <section class="card" id="timer-card">
+      <h2>Focus Timer</h2>
+
+      <div id="timer-display" class="timer-display">25:00</div>
+
+      <!-- Challenge: Change Pomodoro time -->
+      <div class="timer-settings">
+        <label for="custom-minutes">Set minutes:</label>
+        <input id="custom-minutes" type="number" min="1" max="99" value="25" />
+        <button id="apply-time-btn" class="btn btn-secondary">Apply</button>
+      </div>
+
+      <div class="timer-controls">
+        <button id="start-btn" class="btn btn-primary">Start</button>
+        <button id="stop-btn" class="btn btn-secondary">Stop</button>
+        <button id="reset-btn" class="btn btn-secondary">Reset</button>
+      </div>
+    </section>
+
+    <!-- TO-DO LIST -->
+    <section class="card" id="todo-card">
+      <h2>Tasks</h2>
+
+      <div class="todo-input-row">
+        <input id="task-input" type="text" placeholder="Add a new task..." />
+        <button id="add-task-btn" class="btn btn-primary">Add</button>
+      </div>
+
+      <!-- Sort controls (Challenge) -->
+      <div class="sort-row">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="done">Done last</option>
+        </select>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section class="card" id="links-card">
+      <h2>Quick Links</h2>
+
+      <div class="link-input-row">
+        <input id="link-name-input" type="text" placeholder="Link name" />
+        <input id="link-url-input" type="url" placeholder="https://..." />
+        <button id="add-link-btn" class="btn btn-primary">Add Link</button>
+      </div>
+
+      <div id="links-container" class="links-container"></div>
+    </section>
+
+  </main>
+
+  <!-- ───────────────────────── NAME MODAL ───────────────────────── -->
+  <div id="name-modal" class="modal hidden">
+    <div class="modal-box">
+      <h3>What's your name?</h3>
+      <input id="name-input" type="text" placeholder="Enter your name..." maxlength="30" />
+      <div class="modal-actions">
+        <button id="save-name-btn" class="btn btn-primary">Save</button>
+        <button id="cancel-name-btn" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
